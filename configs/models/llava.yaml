@@ -1,0 +1,10 @@
+# ======== Model ========
+model_id: llava-hf/llava-1.5-7b-hf
+patch_L: 15
+# ======= Dataset =======
+dataset_kwargs:
+  # !!! IMPORTANT !!!
+  # llava adds image tokens before text
+  # but doesn't update input_ids
+  image_offset: 575
+# =======================

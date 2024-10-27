@@ -1,0 +1,10 @@
+# ======== Model ========
+model_id: TIGER-Lab/Mantis-8B-Fuyu
+patch_L: 23
+# ======= Dataset =======
+dataset_kwargs:
+  # !!! IMPORTANT !!!
+  # mantis adds "image 0:" to 
+  # delimit the images
+  src_match: -4
+# =======================

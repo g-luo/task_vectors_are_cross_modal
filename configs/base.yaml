@@ -1,0 +1,31 @@
+# ======= Tasks =======
+num_seeds: 3
+tasks:
+  - country-capital
+  - country-currency
+  - animal-latin
+  - animal-young
+  - food-color
+  - food-flavor
+instructions:
+  - "The capital city of the country:"
+  - "The last word of the official currency of the country:"
+  - "The scientific name of the animal's species in latin:"
+  - "The term for the baby of the animal:"
+  - "The color of the food:"
+  - "The flavor descriptor of the food:"
+# ======= Dataset =======
+data_folder: data/annotations
+dataset_kwargs:
+  src_modality: ${src_modality}
+  tgt_modality: ${tgt_modality}
+  include_regular: True
+# ====== Generate =======
+generate_kwargs:
+  max_new_tokens: 1
+  do_sample: False
+# ======= Saving ========
+exp: ${spec}_${src_modality}-${tgt_modality}
+feats_folder: runs/feats/${exp}/${feats_model}/val
+save_folder: runs/experiments/${exp}/feats-${feats_model}_patch-${patch_model}/${mode}
+# ========================

@@ -1,0 +1,4 @@
+# ======== Model ========
+model_id: HuggingFaceM4/idefics2-8b
+patch_L: 16
+# =======================
