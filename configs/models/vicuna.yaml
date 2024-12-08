@@ -1,3 +1,4 @@
 # ======== Model ========
 model_id: lmsys/vicuna-7b-v1.5
+model_revision: 3321f76e3f527bd14065daf69dad9344000a201d
 # =======================

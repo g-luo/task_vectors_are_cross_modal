@@ -75,22 +75,22 @@ def load_text_model(model_id, model):
         text_model = text_model_loader(model)
         return text_model
 
-def load_hf_model(model_id, device="cuda", load_in_4bit=True):
+def load_hf_model(model_id, model_revision=None, device="cuda", load_in_4bit=True):
     model_kwargs = {}
     if load_in_4bit:
         model_kwargs = get_quantization_config(model_kwargs)
     if "Mantis" in model_id:
         from mantis.models.mfuyu import MFuyuForCausalLM, MFuyuProcessor
-        processor = MFuyuProcessor.from_pretrained(model_id)
-        model = MFuyuForCausalLM.from_pretrained(model_id, device_map=device, **model_kwargs)
+        model = MFuyuForCausalLM.from_pretrained(model_id, revision=model_revision, device_map=device, **model_kwargs)
+        processor = MFuyuProcessor.from_pretrained(model_id, revision=model_revision)
     elif "mistral" in model_id or "vicuna" in model_id:
         from transformers import AutoModelForCausalLM, AutoTokenizer
-        model = AutoModelForCausalLM.from_pretrained(model_id, device_map=device, **model_kwargs)
-        tokenizer = AutoTokenizer.from_pretrained(model_id)
+        model = AutoModelForCausalLM.from_pretrained(model_id, revision=model_revision, device_map=device, **model_kwargs)
+        tokenizer = AutoTokenizer.from_pretrained(model_id, revision=model_revision)
         processor = LLMProcessor(tokenizer)
     else:
-        model = AutoModelForVision2Seq.from_pretrained(model_id, device_map=device, **model_kwargs)
-        processor = AutoProcessor.from_pretrained(model_id)
+        model = AutoModelForVision2Seq.from_pretrained(model_id, revision=model_revision, device_map=device, **model_kwargs)
+        processor = AutoProcessor.from_pretrained(model_id, revision=model_revision)
         processor.image_processor.do_image_splitting = False
     return model, processor
 

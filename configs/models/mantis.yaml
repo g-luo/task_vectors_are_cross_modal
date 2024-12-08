@@ -1,5 +1,6 @@
 # ======== Model ========
 model_id: TIGER-Lab/Mantis-8B-Fuyu
+model_revision: ea76e7446341b399d9af2d7af390abb83fda6b28
 patch_L: 23
 # ======= Dataset =======
 dataset_kwargs:

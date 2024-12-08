@@ -1,4 +1,5 @@
 # ======== Model ========
 model_id: HuggingFaceM4/idefics2-8b
+model_revision: 2c42686c57fe21cf0348c9ce1077d094b72e7698
 patch_L: 16
 # =======================

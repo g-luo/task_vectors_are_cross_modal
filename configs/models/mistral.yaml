@@ -1,3 +1,4 @@
 # ======== Model ========
 model_id: mistralai/Mistral-7B-v0.1
+model_revision: 7231864981174d9bee8c7687c24c8344414eae6b
 # =======================

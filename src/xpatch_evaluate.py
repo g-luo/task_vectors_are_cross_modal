@@ -182,8 +182,8 @@ def evaluate(model, processor, text_model, model_config, config, task, seed, icl
 # ===========================
 #           Setup
 # ===========================
-def load_model(model_id, device="cuda"):
-    model, processor = xpatch_helpers.load_hf_model(model_id, device)
+def load_model(model_id, model_revision=None, device="cuda"):
+    model, processor = xpatch_helpers.load_hf_model(model_id, model_revision=model_revision, device=device)
     xpatch_helpers.remove_cache(model)
     text_model = xpatch_helpers.load_text_model(model_id, model)
     model_config = xpatch_helpers.get_model_config(text_model)
@@ -222,7 +222,7 @@ def main(config):
     # Load model
     model_name = config["feats_model"] if config.get("save_feats", False) else config["patch_model"]
     model_info = OmegaConf.load(f"configs/models/{model_name}.yaml")
-    model, processor, text_model, model_config = load_model(model_info["model_id"])
+    model, processor, text_model, model_config = load_model(model_info["model_id"], model_revision=model_info.get("model_revision"))
     config = OmegaConf.merge(config, model_info)
 
     # Loop through tasks

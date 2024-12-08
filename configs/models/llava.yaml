@@ -1,5 +1,6 @@
 # ======== Model ========
 model_id: llava-hf/llava-1.5-7b-hf
+model_revision: a272c74b2481d8aff3aa6fc2c4bf891fe57334fb
 patch_L: 15
 # ======= Dataset =======
 dataset_kwargs:
