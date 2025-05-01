@@ -1,11 +1,13 @@
-# Task Vectors are Cross-Modal
+# Vision-Language Models Create Cross-Modal Task Representations
+
 **Grace Luo, Trevor Darrell, Amir Bar**
 
-This repository contains the data and code for the paper Task Vectors are Cross-Modal.
+This repository contains the data and code for the paper "Vision-Language Models Create Cross-Modal Task Representations."
 
-[[`Project Page`](https://task-vectors-are-cross-modal.github.io)][[`arXiv`](https://arxiv.org/abs/2410.22330)]
+[[`Project Page`](https://vlm-cross-modal-reps.github.io)][[`arXiv`](https://arxiv.org/abs/2410.22330)]
 
 ## Releases
+- ✍️ 2025/05/01: Update project title from "Task Vectors are Cross-Modal"
 - 🚀 2024/10/29: Initial codebase release
 
 ## Setup
@@ -55,10 +57,13 @@ To evaluate cross-modal patching on our six tasks, run the following scripts. On
 
 ## Citing
 ```
-@article{luo2024tvacm,
-  title={Task Vectors are Cross-Modal}, 
+@inproceedings{luo2025vlm,
+  title={Vision-Language Models Create Cross-Modal Task Representations}, 
   author={Grace Luo and Trevor Darrell and Amir Bar},
-  journal={arXiv preprint arXiv:2410.22330}
-  year={2024}
+  booktitle={ICML},
+  year={2025}
 }
 ```
+
+## Acknowledgements
+This codebase was implemented from scratch, inspired by design patterns and conventions from [Task Vectors](https://github.com/roeehendel/icl_task_vectors) and [Function Vectors](https://github.com/ericwtodd/function_vectors).

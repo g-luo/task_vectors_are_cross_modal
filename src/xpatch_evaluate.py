@@ -206,7 +206,7 @@ def get_overall_results(tasks, save_folder, allow_lower_case):
         acc_info = xpatch_helpers.avg_task_accuracy([save_file], patch_L=patch_L, verbose=False, allow_lower_case=allow_lower_case)
         results.append(acc_info["accuracy"])
     df = pd.DataFrame(np.array(results).T)
-    df.index = ["no_context", "xbase", f"xpatch (L={patch_L})"]
+    df.index = ["no_context", "prompt", f"patch (L={patch_L})"]
     df.index.name = "method"
     df.columns = list(tasks)
     df['avg'] = df.mean(axis=1)
