@@ -1,6 +1,6 @@
 #!/bin/bash
 data_root=data
-repo=https://huggingface.co/datasets/g-luo/task_vectors_are_cross_modal
+repo=https://huggingface.co/datasets/g-luo/vlm-cross-modal-reps
 
 zip_name=annotations
 wget -P ${data_root} -O ${data_root}/${zip_name}.zip ${repo}/resolve/main/data/${zip_name}.zip?download=true

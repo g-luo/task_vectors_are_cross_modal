@@ -19,7 +19,7 @@ huggingface-cli login
 ```
 
 ## Data
-All data can be found on our [HuggingFace page](https://huggingface.co/datasets/g-luo/task_vectors_are_cross_modal/tree/main). To download and set up the data, run the following script:
+All data can be found on our [HuggingFace page](https://huggingface.co/datasets/g-luo/vlm-cross-modal-reps/tree/main). To download and set up the data, run the following script:
 ```
 ./download_data.sh
 ```
